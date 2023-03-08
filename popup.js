@@ -16,7 +16,7 @@ async function init() {
 async function mountComponent() {
     let divNameInput = document.getElementById("div-name-input").value;
     console.log("Div Name Input", divNameInput);
-    let elementNameInput = document.getElementById("element-name-input").value;
+    let elementNameInput = document.getElementById("element-name").value;
     console.log("Element Name Input", elementNameInput);
 
     let tab = await chrome.tabs.query({active: true});
@@ -42,13 +42,20 @@ async function createBoltComponent(divNameInput, elementNameInput) {
         foundDiv = document.getElementById(divNameInput).parentElement;
     }
     if (elementNameInput === "authorization_component") {
-        console.log("in here");
         const auth = boltEmbedded.create("authorization_component", {
             style: {position: "right" +
                     ""},
         });
         await auth.mount(foundDiv);
         await auth.authorize({identifierType: "email"});
+    } else if (elementNameInput === "credit_card_input") {
+        const styles = { borderStyle: "underline"};
+        const listeners = {
+            error: () => {},
+            valid: () => {},
+        };
+        const creditCard = boltEmbedded.create("credit_card_input", { styles, listeners });
+        await creditCard.mount(foundDiv);
     }
 }
 
