@@ -1,0 +1,22 @@
+.container {
+    background: white;
+    border-radius: 25px;
+    width: 500px;
+    height: 300px;
+    text-align: left;
+    border: 25px;
+    border-top: 20px;
+}
+
+.divInput {
+    color: navy;
+    width: 500px;
+    margin-top: 25px;
+}
+
+.elementInput {
+    color: navy;
+    width: 500px;
+    margin-top: 25px;
+
+}

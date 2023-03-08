@@ -1,0 +1,21 @@
+{
+  "name": "Embedded Extension",
+  "version": "1.0.0",
+  "description": "See Bolt Embedded Elements live on your storefront!",
+  "manifest_version": 3,
+  "permissions": ["storage", "declarativeContent", "activeTab", "scripting"],
+  "author": "Ananya Chandra",
+  "action":{
+    "default_popup": "index.html",
+    "default_title": ""
+  },
+  "background": {
+    "service_worker": "main.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.com/*"],
+      "js": ["embed.js"]
+    }
+  ]
+}
