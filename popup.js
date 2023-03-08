@@ -1,5 +1,3 @@
-console.log("hello,");
-
 let div = document.getElementById("button");
 div.onClick = init()
 div.onclick = mountComponent;
