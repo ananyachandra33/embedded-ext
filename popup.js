@@ -56,6 +56,24 @@ async function createBoltComponent(divNameInput, elementNameInput) {
         };
         const creditCard = boltEmbedded.create("credit_card_input", { styles, listeners });
         await creditCard.mount(foundDiv);
+    } else if (elementNameInput === "login_status") {
+        const login = boltEmbedded.create("login_status", {
+            listeners: {
+                show: () => {},
+                login: () => {},
+                logout: () => {},
+            },
+        });
+        await login.mount(foundDiv);
+    } else if (elementNameInput === "discount_spinner") {
+        const login = boltEmbedded.create("discount_spinner", {
+            listeners: {
+                show: () => {},
+                login: () => {},
+                logout: () => {},
+            },
+        });
+        await login.mount(foundDiv);
     }
 }
 
