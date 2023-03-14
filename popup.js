@@ -63,8 +63,8 @@ async function createBoltComponent(divNameInput, elementNameInput) {
             },
         });
         await login.mount(foundDiv);
-    } else if (elementNameInput === "discount_spinner") {
-        const login = boltEmbedded.create("discount_spinner", {
+    } else if (elementNameInput === "discount_wheel") {
+        const login = boltEmbedded.create("discount_wheel", {
             listeners: {
                 show: () => {},
                 login: () => {},
